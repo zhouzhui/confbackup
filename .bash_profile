@@ -10,8 +10,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias showAllFiles='defaults write com.apple.Finder AppleShowAllFiles YES'
-alias showNormalFilesOnly='defaults write com.apple.Finder AppleShowAllFiles NO'
+alias showAllFiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+alias showNormalFilesOnly='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+alias goviminfo='ssh -A -i ~/Keys/viminfo.pem -l ubuntu gfw.viminfo.com'
 
 # portfw $local_port:$remote_host:$remote_port
 # alias portfw='ssh $user@ssh_host -p $ssh_port -i $private_key_path -A -L'
