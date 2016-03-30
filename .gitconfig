@@ -1,0 +1,35 @@
+[user]
+	name = dhf
+	email = hfdiao@gmail.com
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[core]
+	excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+	dc = dcommit
+	conf = config
+	last = log -1 HEAD
+	stash-unapply = !git stash show -p | git apply -R
+[branch]
+	autosetuprebase = always
+[svn]
+	pushmergeinfo = true
+	rmdir = true
+[color]
+	ui = true
+[credential]
+	helper = osxkeychain
+[svn-remote "svn"]
+	automkdirs = false
+[push]
+	default = simple
