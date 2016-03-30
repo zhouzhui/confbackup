@@ -1,0 +1,7 @@
+proxyAddress = "0.0.0.0"
+proxyPort = 54321
+socksParentProxy = "127.0.0.1:12345"
+socksProxyType = socks5
+allowedClients = 127.0.0.1
+daemonise = true
+logSyslog = true
