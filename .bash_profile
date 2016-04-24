@@ -12,7 +12,7 @@ alias egrep='egrep --color=auto'
 
 alias showAllFiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias showNormalFilesOnly='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
-alias goviminfo='ssh -A -i ~/Keys/viminfo.pem -l ubuntu gfw.viminfo.com'
+alias goec2='ssh -A -i ~/Keys/ec2.dhf.im.pem -l ubuntu 52.196.40.253'
 
 # portfw $local_port:$remote_host:$remote_port
 # alias portfw='ssh $user@ssh_host -p $ssh_port -i $private_key_path -A -L'
