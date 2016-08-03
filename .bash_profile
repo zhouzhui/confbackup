@@ -29,4 +29,11 @@ set visible-stats on
 #When displaying the prompt, write the previous line to disk
 PROMPT_COMMAND='history -a'
 
-source ~/.git-completion.sh
+if [ -d ~/.bash_profile.d ]; then
+  for i in ~/.bash_profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
