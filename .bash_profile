@@ -30,7 +30,7 @@ set visible-stats on
 PROMPT_COMMAND='history -a'
 
 if [ -d ~/.bash_profile.d ]; then
-  for i in ~/.bash_profile.d/*.sh; do
+  for i in `find ~/.bash_profile.d -name '*.sh'`; do
     if [ -r $i ]; then
       . $i
     fi
