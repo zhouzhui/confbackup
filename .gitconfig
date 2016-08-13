@@ -1,6 +1,6 @@
 [user]
 	name = dhf
-	email = hfdiao@gmail.com
+	email = a@dhf.im
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [core]
@@ -33,3 +33,5 @@
 	automkdirs = false
 [push]
 	default = simple
+[commit]
+    template = ~/.stCommitMsg
