@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook">
+        <delay>100</delay>
+    </shutdownHook>
+
+    <if condition='property("logstash.collect").equals("true")'>
+        <then>
+            <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <immediateFlush>false</immediateFlush>
+                </encoder>
+                <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                    <fileNamePattern>/data/log/${project.name:-rpcserver}/service.%d{yyyy-MM-dd}
+                        .log</fileNamePattern>
+                    <maxHistory>14</maxHistory>
+                    <totalSizeCap>4GB</totalSizeCap>
+                </rollingPolicy>
+            </appender>
+            <logger name="im.dhf" level="INFO" additivity="false">
+                <appender-ref ref="FILE" />
+            </logger>
+        </then>
+    </if>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %t %-5level - %m%n</pattern>
+            <immediateFlush>false</immediateFlush>
+        </encoder>
+    </appender>
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+

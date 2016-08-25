@@ -1,0 +1,5 @@
+server.host: "0.0.0.0"
+# setup an elasticsearch client-only on the Kibana host
+# see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/modules-node.html
+elasticsearch.url: "http://localhost:9200"
+logging.quiet: true

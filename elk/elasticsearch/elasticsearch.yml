@@ -1,0 +1,12 @@
+cluster.name: logstash_es
+path.data: /data/elasticsearch/data
+path.logs: /data/elasticsearch/logs
+bootstrap.mlockall: false
+network.host: 0.0.0.0
+http.port: 9200
+gateway.recover_after_nodes: 2
+discovery.zen.ping.unicast.hosts: ["logstash-es1", "logstash-es2","logstash-es3"]
+discovery.zen.minimum_master_nodes: 2
+node.max_local_storage_nodes: 1
+action.destructive_requires_name: true
+index.translog.durability: "async"
