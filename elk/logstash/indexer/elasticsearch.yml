@@ -12,3 +12,16 @@ discovery.zen.minimum_master_nodes: 2
 node.max_local_storage_nodes: 1
 action.destructive_requires_name: true
 index.translog.durability: "async"
+
+# setup ik, https://github.com/medcl/elasticsearch-analysis-ik
+index:
+  analysis:
+    analyzer:
+      ik_max_word:
+          type: ik
+          use_smart: false
+      ik_smart:
+          type: ik
+          use_smart: true
+
+#index.analysis.analyzer.default.type: ik_max_word
