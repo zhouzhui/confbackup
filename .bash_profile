@@ -1,4 +1,9 @@
 export JAVA_HOME=$(/usr/libexec/java_home)
+export GOPATH=$HOME/.golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 export PS1="[\u@\h \W]\$ "
 
 alias h='history'
